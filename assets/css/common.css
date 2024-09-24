@@ -1,0 +1,36 @@
+.blind{
+	position:absolute;
+    overflow:hidden;
+    width:1px;
+    height:1px;
+    margin:-1px;
+    clip:rect(0,0,0,0);
+}
+
+.inner {
+    /* min-width: 1238px; */
+    max-width: 1408px;
+    margin: 0 auto;
+    padding: 0 104px;
+}
+
+
+/* 상황에따라다름 */
+@media (max-width:1230px) {
+    
+}
+/* 테블릿 [768]~ 1024px*/
+@media (max-width:1024px) {
+    
+
+.inner {
+    padding: 0 50px;
+}
+}
+
+/* 모바일 320까지잡는것 */
+@media (max-width:767px) {
+    .inner {
+        padding: 0 22px;
+    }
+}

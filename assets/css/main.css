@@ -1,0 +1,552 @@
+/* sc-visual */
+
+
+.video-slide .video-box .video{
+    width: 100%;
+    height: 544px;
+    object-fit: cover;
+}
+.video-slide .text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 5;
+}
+.video-slide .swiper-slide .text-box .text {
+    text-align: center;
+    font-size: clamp(40px,5.2083vw,100px);
+    line-height: 1.2;
+    letter-spacing: -2.4px;
+    font-weight: 800;
+    white-space: nowrap;
+    text-shadow: 6px 6px 18px rgba(0, 0, 0, 0.16);
+    width: 0%;
+    opacity: 0;
+    overflow: hidden;
+
+    /* 0.3초동안 확장되고, 0.8초후에 시작 */
+    transition: width 1s 0.8s ease-out, opacity 0.8s 0.8s linear;
+}
+.video-slide .swiper-slide-active .text-box .text{
+    opacity: 1;
+    width: 100%;
+}
+
+/*? 이건 왜 해준걸까 */
+.video-slide .swiper-slide .text-box .text br{
+    display: none;
+}
+
+
+
+
+
+.sc-search {
+    position: relative;
+}
+.sc-search .flex-wrap {
+    position: absolute;
+    left: 0;
+    bottom: -27px;
+    z-index: 5;
+    display: flex;
+    /* align-items: center; */
+    width: 100%;
+    background: #fff;
+    max-width: 1200px;
+    height: 54px;
+    font-size: 14px;
+}
+.sc-search .flex-wrap .text{
+    display: flex;
+    align-items: center;
+}
+.sc-search .flex-wrap .search-icon{
+    display: flex;align-items: center;
+}
+.sc-search .flex-wrap .select {
+    flex: 1;
+    padding: 0 25px 0 9px;
+    appearance: none;
+    -webkit-appearance: none;
+    background:url(https://recruit.navercorp.com/share/tmplat/naver/img/recruit/ico_arrow_down.png) no-repeat right 10px center/ 8px 5px;
+}
+.sc-search .flex-wrap .select option:disabled {display: none;}
+
+.sc-search .flex-wrap .keyword,
+.sc-search .flex-wrap .select-area{
+    display: flex;flex: 1;
+}
+
+.sc-search .flex-wrap fieldset,
+.sc-search .flex-wrap .input,
+.sc-search .flex-wrap .select {border: 0; outline: none;} 
+
+.sc-search .flex-wrap .select,
+.sc-search .flex-wrap .fieldset .input::placeholder{color: #d0d0d0;}
+
+.sc-search .flex-wrap .input {
+    padding-left: 10px;
+    flex: 1;
+}
+.sc-search .flex-wrap .btn-search {
+    width: 97px;
+    height: 54px;
+    background: #000;
+    color: #fff;
+}
+.sc-search .flex-wrap .btn-search:hover {
+    background: #16ef72;
+    color: #000;
+}
+.sc-search .flex-wrap .search-icon span {
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url('https://recruit.navercorp.com/share/tmplat/naver/img/sp_pc.png') no-repeat -245px -40px;
+    background-size: 328px 205px;
+    margin: 0 20px;
+}
+
+/* .swiper (common) */
+
+.company-slide,
+.people-slide{padding-bottom: 68px;}
+.swiper .control {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.swiper .control .btn {
+    width: 32px;
+    height: 32px;
+    background: url('https://recruit.navercorp.com/share/tmplat/naver/img/sp_pc.png') no-repeat;
+    background-size: 328px 205px;
+}
+.swiper .control .swiper-button-disabled{opacity: 0.5;}
+.swiper .control .btn.prev {
+    background-position: -187px -172px;
+}
+.swiper .control .btn.next {
+    background-position: -113px -172px;
+}
+
+
+
+
+
+/* .title (common) */
+.title {
+    margin-bottom: 60px;
+}
+.title .headline {
+    font-size: 64px;
+    line-height: 71px;
+    letter-spacing: -0.64px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.title .desc {
+    display: inline-block;
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: -0.44px;
+    font-weight: 500;
+}
+.title .learn-link {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.36px;
+    text-decoration: underline;
+    margin-left: 20px;
+    vertical-align: top;
+}
+
+
+
+/* sc-teams */
+.sc-teams {
+    background: #fafafa;
+    padding-top: 124px;
+}
+.sc-teams .contents {
+    margin-top: 70px;
+}
+.sc-teams .contents .item {
+    /* display: flex; */
+    padding: 20px 0;
+}
+.sc-teams .contents .item .inner {
+    display: flex;
+}
+.sc-teams .contents .item:hover {
+    background: #ebebeb;
+    color: #000;
+}
+.sc-teams .contents .item h3 {
+    position: relative;
+    flex: 1;
+    font-size: 38px;
+    line-height: 60px;
+    font-weight: 500;
+}
+.sc-teams .contents .item p {
+    flex: 1;
+    font-size: 22px;
+    line-height: 60px;
+}
+.sc-teams .contents .item .number {
+    display: inline-block;
+    font-size: 15px;
+    vertical-align: super;
+}
+.sc-teams .contents .item .arrow {
+    position: relative;
+}
+.sc-teams .contents .item .arrow::after {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 7px;
+    width: 9px;
+    height: 9px;
+    background: url('https://recruit.navercorp.com/share/tmplat/naver/img/sp_pc.png') no-repeat -176px -105px;
+    background-size: 328px 205px;
+}
+
+
+/* sc-people */
+.sc-people {
+    position: relative;
+    padding: 95px 0;
+    overflow: hidden;
+}
+.sc-people .people-slide {
+    overflow:initial;
+} 
+.sc-people .people-slide .swiper-wrapper {
+    width: 100%;
+    /* width: 5000px; */
+    /* width: 100%; */
+    /* width: 16920px; */
+}
+.sc-people .people-slide .swiper-slide {
+    width: 100%;
+    flex-shrink: 0;
+    /* width: 1000px; */
+    /* display: flex;
+    justify-content: center;    
+    align-items: center; */
+}
+
+.sc-people .people-slide .img-box {
+    width: 100%;
+    position: relative;
+    /* padding-bottom: 50%; */
+
+    /*? 이 수치는 뭐지? */
+    padding-bottom: calc((520/1097)*100%);
+    background: #f00;
+}
+.sc-people .people-slide .img-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sc-people .people-slide .text-box {
+    margin-top: 20px;
+}
+.sc-people .people-slide .text-box .text-title {
+    display: flex;
+    gap: 30px;
+}
+.sc-people .people-slide .text-box strong {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 36px;
+}
+.sc-people .people-slide .text-box .interview-link {
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: underline;
+}
+.sc-people .people-slide .text-box .text-info {
+    margin-top: 16px;
+    font-size: 14px;
+}
+.sc-people .people-slide .text-box .text-info .dept {
+    position: relative;
+    margin-right: 12px;
+}
+.sc-people .people-slide .text-box .text-info .dept::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 4px;
+    width: 1px;
+    height: 10px;
+    background-color: #000;
+    /* vertical-align: top; */
+}
+
+
+
+/* sc-company */
+.sc-company {
+    position: relative;
+}
+.sc-company .company-slide .img-box{
+    /* width: 381px; */
+}
+.sc-company .company-slide .img-box img {
+    width: 100%;
+}
+.sc-company .company-slide .text-box {
+    margin-top: 29px;
+}
+.sc-company .company-slide .text-box strong {
+    font-size: 25px;
+    line-height: 36px;
+    letter-spacing: -0.5px;
+    font-weight: 600;
+}
+.sc-company .company-slide .text-box p {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+
+
+
+/* sc-apply */
+.sc-apply {
+    padding: 95px 0 102px;
+}
+.sc-apply .headline {
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: -0.25px;
+    font-weight: 700;
+}
+.sc-apply .link {
+    margin-top: 20px;
+}
+.sc-apply .link-text {
+    font-size: 18px;
+}
+.sc-apply .link-icon {
+    display: inline-block;
+    width: 33px;
+    height: 32px;
+    background: url('https://recruit.navercorp.com/share/tmplat/naver/img/sp_pc.png') no-repeat -76px -172px;
+    background-size: 328px 205px;
+    vertical-align: bottom;
+    margin-left: 10px;
+}
+
+.sc-search .inputForm2{display: none;}
+.pop-search {display: none;}
+/* 상황에따라다름 */
+/* 반응형 */
+@media (max-width:1230px) {
+    /* 
+    .video-slide .swiper-slide .text-box .text {
+        font-size: 80px;
+    }
+    */
+    
+
+    /* 너비 1230px 이하일시 텍스트 줄바꿈 지우기 */
+    .sc-company .company-slide .text-box p br {display: none;}
+}
+/* 테블릿 [768]~ 1024px */
+@media (max-width:1024px) {
+    /* 
+    .video-slide .swiper-slide .text-box .text {
+        font-size: 60px;
+    } 
+    */
+    .sc-search {
+        padding: 22px 0 50px;
+    }
+    .sc-search .inputForm { display: none; }
+    .sc-search .inputForm2 {
+        cursor: pointer;
+        position: relative;
+        display: block;
+        background-color: #ebebeb;
+        padding: 10px 45px 10px 10px;
+    }
+    .sc-search .inputForm2 .search-icon-box {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 10px 10px;
+    }
+    .sc-search .inputForm2 .search-icon {
+        display: block;
+        width: 19px;
+        height: 19px;
+        background: url('https://recruit.navercorp.com/share/tmplat/naver/img/sp_mo.png') no-repeat;
+        background-position: -140px -125px;
+        background-size: 195px 181px;
+    }
+
+    /* pop-search */
+    .pop-search {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+        background-color: #fff;
+        width: 100%;
+        height: 100%;
+        padding: 60px 32px;
+        overflow-y: scroll;
+        font-weight: normal;
+    }
+    .pop-search.on {
+        display: block;
+    }
+    .pop-search .close-btn {
+        position: absolute;
+        top: 24px;
+        left: 22px;
+        width: 14px;
+        height: 14px;
+        background: url('https://recruit.navercorp.com/share/tmplat/naver/img/sp_mo.png') no-repeat;
+        background-size: 195px 181px;
+        background-position: -110px -28px;
+    }
+    .search-area {
+        position: relative;
+    }
+    .search-area .search-icon_black-box {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+    .search-area .search-icon_black-box .search-icon-black {
+        display: block;
+        background: url("https://recruit.navercorp.com/share/tmplat/naver/img/sp_pc.png") no-repeat;
+        background-position: -268px -40px;
+        background-size: 328px 205px;
+        width: 15px;
+        height: 15px;
+    }
+    .pop-search .form .fieldset {
+        border: none;
+    }
+    .pop-search .form .input {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #d0d0d0;
+        width: 100%;
+        font-size: 14px;
+        line-height: 26px;
+        padding: 6px 36px 6px 0;
+    }
+
+
+    /* list */
+    .list-area {
+        margin-top: 45px;
+        font-weight: normal;
+        font-size: 14px;
+    }
+    .list-area h3 {}
+    .list-area ul {
+        margin-top: 8px;
+    }
+    .list-area ul li {
+        margin-top: 14px;
+        position: relative;
+        cursor: pointer;
+    }
+    .list-area ul li span {
+        display: block;
+        position: relative;
+        padding-left: 25px;
+    }
+    .list-area ul li span::before {
+        content: '';
+        background: url('https://recruit.navercorp.com/share/tmplat/naver/img/sp_pc.png') no-repeat;
+        background-position: -136px -93px;
+        background-size: 328px 205px;
+        width: 8px;
+        height: 5px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+    }
+    .list-area .sub-list {
+        display: none;
+    }
+    .list-area .sub-list.on {
+        display: block;
+    }
+    .list-area .sub-list .sub-item {
+        padding-left: 20px;
+    }
+    /* .list-area .sub-item */
+     .sub-btn-all {
+        position: relative;
+        padding-left: 20px;
+    }
+    /* .list-area .sub-item */
+     .sub-btn-all::before {
+        content: '';
+        position: absolute;
+        border: 1px solid #d0d0d0;
+        width: 10px;
+        height: 10px;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+    }
+    /* .list-area .sub-item  */
+    .sub-btn-all.on::before {
+        content: '';
+        background-color: #000;
+        border: 1px solid #fff;
+    }
+    
+
+}
+
+/* 모바일 320까지잡는것 */
+@media (max-width:768px) {
+    .sc-visual .video-box {
+        position: relative;
+        
+        /* padding-bottom으로 반응형 video 크기 비율조절 */
+        padding-bottom: calc((200/320)*100%);
+    }
+    .video-slide .video-box .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .video-slide .swiper-slide .text-box .text {
+        width: 100%;
+    }
+    .video-slide .swiper-slide .text-box .text br {
+        display: block;
+    }
+    .sc-people .people-slide .img-box {
+        padding-bottom: 100%;
+    }   
+}
