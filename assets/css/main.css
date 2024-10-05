@@ -1,10 +1,9 @@
 /* sc-visual */
-
-
-.video-slide .video-box .video{
+.video-slide .video-box .video {
     width: 100%;
     height: 544px;
     object-fit: cover;
+
 }
 .video-slide .text-box {
     position: absolute;
@@ -16,7 +15,11 @@
 }
 .video-slide .swiper-slide .text-box .text {
     text-align: center;
-    font-size: clamp(40px,5.2083vw,100px);
+
+    /* 최솟값 40px, 최댓값 100px */
+    /* font-size: clamp(40px,5.2083vw,100px); */
+    
+    font-size: 80px;
     line-height: 1.2;
     letter-spacing: -2.4px;
     font-weight: 800;
@@ -26,7 +29,7 @@
     opacity: 0;
     overflow: hidden;
 
-    /* 0.3초동안 확장되고, 0.8초후에 시작 */
+    /* 여기 해석 */
     transition: width 1s 0.8s ease-out, opacity 0.8s 0.8s linear;
 }
 .video-slide .swiper-slide-active .text-box .text{
@@ -41,8 +44,7 @@
 
 
 
-
-
+/* sc-search */
 .sc-search {
     position: relative;
 }
@@ -74,19 +76,15 @@
     background:url(https://recruit.navercorp.com/share/tmplat/naver/img/recruit/ico_arrow_down.png) no-repeat right 10px center/ 8px 5px;
 }
 .sc-search .flex-wrap .select option:disabled {display: none;}
-
 .sc-search .flex-wrap .keyword,
 .sc-search .flex-wrap .select-area{
     display: flex;flex: 1;
 }
-
 .sc-search .flex-wrap fieldset,
 .sc-search .flex-wrap .input,
 .sc-search .flex-wrap .select {border: 0; outline: none;} 
-
 .sc-search .flex-wrap .select,
 .sc-search .flex-wrap .fieldset .input::placeholder{color: #d0d0d0;}
-
 .sc-search .flex-wrap .input {
     padding-left: 10px;
     flex: 1;
@@ -111,7 +109,6 @@
 }
 
 /* .swiper (common) */
-
 .company-slide,
 .people-slide{padding-bottom: 68px;}
 .swiper .control {
@@ -172,6 +169,7 @@
 .sc-teams {
     background: #fafafa;
     padding-top: 124px;
+    padding-bottom: 89px;
 }
 .sc-teams .contents {
     margin-top: 70px;
@@ -190,7 +188,7 @@
 .sc-teams .contents .item h3 {
     position: relative;
     flex: 1;
-    font-size: 38px;
+    font-size: 36px;
     line-height: 60px;
     font-weight: 500;
 }
@@ -211,7 +209,7 @@
     content: '';
     position: absolute;
     top: -1px;
-    left: 7px;
+    right: -14px;
     width: 9px;
     height: 9px;
     background: url('https://recruit.navercorp.com/share/tmplat/naver/img/sp_pc.png') no-repeat -176px -105px;
@@ -226,7 +224,7 @@
     overflow: hidden;
 }
 .sc-people .people-slide {
-    overflow:initial;
+    overflow: initial;
 } 
 .sc-people .people-slide .swiper-wrapper {
     width: 100%;
@@ -250,7 +248,7 @@
 
     /*? 이 수치는 뭐지? */
     padding-bottom: calc((520/1097)*100%);
-    background: #f00;
+    /* background: #f00; */
 }
 .sc-people .people-slide .img-box img {
     position: absolute;
@@ -354,35 +352,38 @@
 .sc-search .inputForm2{display: none;}
 .pop-search {display: none;}
 /* 상황에따라다름 */
-/* 반응형 */
+/* 반응형  ~ 1230px */
 @media (max-width:1230px) {
-    /* 
     .video-slide .swiper-slide .text-box .text {
-        font-size: 80px;
+        /* font-size: 80px; */
     }
-    */
-    
-
-    /* 너비 1230px 이하일시 텍스트 줄바꿈 지우기 */
-    .sc-company .company-slide .text-box p br {display: none;}
+    .sc-company .company-slide .text-box p br {
+        display: none;
+    }
 }
 /* 테블릿 [768]~ 1024px */
 @media (max-width:1024px) {
-    /* 
-    .video-slide .swiper-slide .text-box .text {
+    /* .video-slide .swiper-slide .text-box .text {
         font-size: 60px;
-    } 
-    */
+    }  */
+    .main > .search-inner {
+        background-color: #fafaff;
+    }
     .sc-search {
         padding: 22px 0 50px;
+        /* background-color: #fafafa; */
     }
-    .sc-search .inputForm { display: none; }
+    .sc-search .inputForm {
+         display: none; 
+    }
     .sc-search .inputForm2 {
         cursor: pointer;
         position: relative;
         display: block;
         background-color: #ebebeb;
         padding: 10px 45px 10px 10px;
+        font-size: 14px;
+        color: #696868;
     }
     .sc-search .inputForm2 .search-icon-box {
         position: absolute;
@@ -399,7 +400,6 @@
         background-position: -140px -125px;
         background-size: 195px 181px;
     }
-
     /* pop-search */
     .pop-search {
         position: fixed;
@@ -455,9 +455,7 @@
         line-height: 26px;
         padding: 6px 36px 6px 0;
     }
-
-
-    /* list */
+    /* .pop-search list-area */
     .list-area {
         margin-top: 45px;
         font-weight: normal;
@@ -521,15 +519,13 @@
         background-color: #000;
         border: 1px solid #fff;
     }
-    
-
 }
 
 /* 모바일 320까지잡는것 */
 @media (max-width:768px) {
     .sc-visual .video-box {
         position: relative;
-        
+
         /* padding-bottom으로 반응형 video 크기 비율조절 */
         padding-bottom: calc((200/320)*100%);
     }
@@ -541,7 +537,9 @@
         height: 100%;
     }
     .video-slide .swiper-slide .text-box .text {
+        /* border: 1px solid #000; */
         width: 100%;
+        font-size: 40px;
     }
     .video-slide .swiper-slide .text-box .text br {
         display: block;
@@ -549,4 +547,41 @@
     .sc-people .people-slide .img-box {
         padding-bottom: 100%;
     }   
+    .title .headline {
+        font-size: 36px;
+        margin-bottom: 11px;
+    }
+    .title .desc {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .title .learn-link {
+        font-size: 12px;
+        line-height: 22px;
+    }
+    .sc-teams {
+        padding-top: 0;
+        padding-bottom: 50px;
+    }
+    .sc-teams .contents .item .inner {
+        display: block;
+    }
+    .sc-teams .contents .item h3 {
+        display: inline-block;
+        width: 100%;
+        font-size: 24px;
+        line-height: 38px;
+    }
+    .sc-teams .contents .item p {
+        width: 100%;
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .sc-people .people-slide .text-box strong {
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .sc-people .people-slide .text-box .interview-link {
+        display: none;
+    }
 }
